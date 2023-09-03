@@ -14,7 +14,7 @@ const io = new Server(httpServer, {
   },
 });
 
-const port = 2000;
+const port = process.env.PORT || 2000;
 
 app.use(cors());
 
@@ -40,5 +40,5 @@ app.get("/health", (req, res) => {
 });
 
 httpServer.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Server: PORT ${port}`);
 });
